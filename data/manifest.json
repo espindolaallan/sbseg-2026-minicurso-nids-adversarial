@@ -1,0 +1,149 @@
+{
+  "schema_version": 2,
+  "status": "ready",
+  "datasets": {
+    "clean_day17": {
+      "file": "clean_day17.csv.gz",
+      "role": "clean_baseline",
+      "rows": 9874,
+      "class_counts": {
+        "dos": 4937,
+        "normal": 4937
+      },
+      "nominal_payload_percent": null,
+      "pairing_with_clean": null,
+      "output": {
+        "sha256": "d38f58c3da17e675c5cdcd5a844cbd475a9b82aa230c8e20af2225f1704dfefd",
+        "size_bytes": 958254
+      },
+      "source": {
+        "file_name": "unsw-nb15_30min_test_day_17.csv.gz",
+        "sha256": "30ac176323851b5a9bd0718afc00afc8f37204c8b705fcb633ae2d3c1ebb8c89",
+        "size_bytes": 169603069
+      }
+    },
+    "payload_10_day17": {
+      "file": "payload_10_day17.csv.gz",
+      "role": "problem_space",
+      "rows": 4937,
+      "class_counts": {
+        "dos": 4937,
+        "normal": 0
+      },
+      "nominal_payload_percent": 10,
+      "pairing_with_clean": false,
+      "output": {
+        "sha256": "25725140cbc940de0aff68a0789280e005a013e7ded389a46110bdce6c0d1439",
+        "size_bytes": 543272
+      },
+      "source": {
+        "file_name": "unsw-nb15_30min_10percent_payload_day_17.csv.gz",
+        "sha256": "88082dd902d401457f6eb3233a4dc9f39dfbfd9bef4932e0b3e06dd599dd52b8",
+        "size_bytes": 11357946
+      }
+    },
+    "payload_50_day17": {
+      "file": "payload_50_day17.csv.gz",
+      "role": "problem_space",
+      "rows": 4937,
+      "class_counts": {
+        "dos": 4937,
+        "normal": 0
+      },
+      "nominal_payload_percent": 50,
+      "pairing_with_clean": false,
+      "output": {
+        "sha256": "1a62fd4caa37448a9a26731e8e47a518a18cfc3f867396d79b7be9cfeb5406df",
+        "size_bytes": 546941
+      },
+      "source": {
+        "file_name": "unsw-nb15_30min_50percent_payload_day_17.csv.gz",
+        "sha256": "9362711afa3b9be34c18cb2454289d621bbb7022d0b13ac89e5c265101cf9f9e",
+        "size_bytes": 11404281
+      }
+    },
+    "payload_100_day17": {
+      "file": "payload_100_day17.csv.gz",
+      "role": "problem_space",
+      "rows": 4937,
+      "class_counts": {
+        "dos": 4937,
+        "normal": 0
+      },
+      "nominal_payload_percent": 100,
+      "pairing_with_clean": false,
+      "output": {
+        "sha256": "250d2234edf87acd0f2e3e54e31399d98061c58384674a55e3c7cf18a4f1571e",
+        "size_bytes": 548537
+      },
+      "source": {
+        "file_name": "unsw-nb15_30min_100percent_payload_day_17.csv.gz",
+        "sha256": "d783eed200963c70e974379ccf195e275ee5aa39ee51c4a879ca7731709c56c1",
+        "size_bytes": 11435827
+      }
+    }
+  },
+  "schema": {
+    "id_column": "local_id",
+    "feature_count": 49,
+    "auxiliary_columns": [
+      "attackCategory",
+      "label",
+      "packetTotalCountBwd"
+    ],
+    "categories": {
+      "dos": "DoS",
+      "normal": "Normal"
+    },
+    "labels": {
+      "attack": 1,
+      "normal": 0
+    }
+  },
+  "preparation": {
+    "selection_seed": 20260813,
+    "selection_algorithm": "sha256-prefix-by-source-row-v1",
+    "normal_count_requested": 4937,
+    "gzip_compresslevel": 9,
+    "gzip_mtime": 0,
+    "cross_dataset_pairing": {
+      "supported": false,
+      "reason": "A reextração pode alterar a cardinalidade e as fontes não preservam identificadores capazes de relacionar fluxos limpos e modificados."
+    }
+  },
+  "origin": {
+    "dataset": {
+      "name": "UNSW-NB15",
+      "official_url": "https://research.unsw.edu.au/projects/unsw-nb15-dataset"
+    },
+    "public_context": {
+      "cave_nids_revision": "b989941ce021822d0e13afb36b82c09ef7314061",
+      "dmood_revision": "7bac5e5f41d34e15fc96d83255c4e1b6ee0ea586",
+      "dmood_revision_scope": "Revisão registrada para a preparação dos conjuntos; não identifica a origem do checkpoint."
+    },
+    "known_source_gaps": [
+      "Revisão exata do Go-Flows ou imagem de contêiner usada na geração",
+      "Manifesto imutável dos comandos usados nas execuções de +10%, +50% e +100%"
+    ]
+  },
+  "redistribution": {
+    "status": "authorized",
+    "covers_packaged_data": true,
+    "scope": "Os quatro pequenos recortes derivados distribuídos para a prática acadêmica do minicurso SBSeg 2026.",
+    "conditions": [
+      "Atribuir o UNSW-NB15 e manter sua URL oficial.",
+      "Manter a atribuição, o manifesto e o documento de uso e distribuição.",
+      "Tratar qualquer uso comercial segundo as condições definidas pelos responsáveis pelo UNSW-NB15."
+    ],
+    "evidence": [
+      {
+        "type": "author-authorization",
+        "reference": "../USO_E_DISTRIBUICAO.md"
+      },
+      {
+        "type": "source-terms-and-attribution",
+        "reference": "https://research.unsw.edu.au/projects/unsw-nb15-dataset"
+      }
+    ]
+  }
+}
